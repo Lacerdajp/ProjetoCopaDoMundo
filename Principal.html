@@ -5,22 +5,361 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <h1> TESTES</h1>
+    <script type="module" src="Scripts/Script.js"></script>
+    
+    <link  rel="stylesheet" type="text/css" href="./Css//Grupos.css">
 </head>
 <body>
-    <script>
-
-        const get='https://estagio.geopostenergy.com/WorldCup/GetAllTeams';
-        fetch(get,{
-            method: 'GET',
-            headers: new Headers({
-                'git-user': 'Lacerdajp'
-            })
-        })
-        .then(response=>response.json())
-        .then(dados=>console.log(dados))
-        .catch(erro=>console.log(erro));
+    <div>
+    <input type="button" value="PROXIMA ETAPA" id="btn"></input>
+    </div>
+    
+    <div class="gruposA" >
+    <table  hidden="hidden" border="1" id="tb0" cellspacing="0"  >
+        <th  id="group0">
+            <td class="a">PTS</td>
+            <td class="a">SG</td>
+            
+        </th>
         
-    </script>
+        <tr >
+            <td id="time0"></td>
+            <td id="pont0"></td>
+            <td id="sg0"></td>
+        </tr>
+        <tr >
+            <td id="time1"></td>
+            <td id="pont1"></td>
+            <td id="sg1"></td>
+        </tr>
+        <tr >
+            <td id="time2"></td>
+            <td id="pont2"></td>
+            <td id="sg2"></td>
+        </tr>
+        <tr >
+            <td id="time3"></td>
+            <td id="pont3"></td>
+            <td id="sg3"></td>
+        </tr>
+    </table>
+    <table hidden="hidden" border="1"  id="tb1" cellspacing="0">
+        <th id="group1"></th>
+         <td class="a">PTS</td>
+            <td class="a">SG</td>
+        <tr >
+            <td id="time0"></td>
+            <td id="pont0"></td>
+            <td id="sg0"></td>
+        </tr>
+        <tr >
+            <td id="time1"></td>
+            <td id="pont1"></td>
+            <td id="sg1"></td>
+        </tr>
+        <tr >
+            <td id="time2"></td>
+            <td id="pont2"></td>
+            <td id="sg2"></td>
+        </tr>
+        <tr >
+            <td id="time3"></td>
+            <td id="pont3"></td>
+            <td id="sg3"></td>
+        </tr>
+    </table>
+    <table hidden="hidden" border="1" id="tb2"cellspacing="0">
+        <th id="group2"></th>
+        <td class="a">PTS</td>
+        <td class="a">SG</td>
+        <tr >
+            <td id="time0"></td>
+            <td id="pont0"></td>
+            <td id="sg0"></td>
+        </tr>
+        <tr >
+            <td id="time1"></td>
+            <td id="pont1"></td>
+            <td id="sg1"></td>
+        </tr>
+        <tr >
+            <td id="time2"></td>
+            <td id="pont2"></td>
+            <td id="sg2"></td>
+        </tr>
+        <tr >
+            <td id="time3"></td>
+            <td id="pont3"></td>
+            <td id="sg3"></td>
+        </tr>
+    </table>
+    <table hidden="hidden" border="1" id="tb3"cellspacing="0">
+        <th id="group3"></th>
+        <td class="a">PTS</td>
+        <td class="a">SG</td>
+        <tr >
+            <td id="time0"></td>
+            <td id="pont0"></td>
+            <td id="sg0"></td>
+        </tr>
+        <tr >
+            <td id="time1"></td>
+            <td id="pont1"></td>
+            <td id="sg1"></td>
+        </tr>
+        <tr >
+            <td id="time2"></td>
+            <td id="pont2"></td>
+            <td id="sg2"></td>
+        </tr>
+        <tr >
+            <td id="time3"></td>
+            <td id="pont3"></td>
+            <td id="sg3"></td>
+        </tr>
+    </table>
+    </div>
+    <div class="resultadosA" style="width: 30%;">
+        <table hidden="hidden"  border="1" cellspacing="0" id="tbr0">
+            <th>Rodada 1</th>
+            <th>Rodada 2</th>
+            <th>rodada 3</th>
+                
+            <tr>
+                <td id="jogo00"></td>
+                <td id="jogo10"></td>
+                <td id="jogo20"></td>
+            </tr>
+            <tr>
+                <td id="jogo01"></td>
+                <td id="jogo11"></td>
+                <td id="jogo21"></td>
+            </tr>
+        </table>
+        <table hidden="hidden"   border="1" cellspacing="0" id="tbr1">
+            <th>Rodada 1</th>
+            <th>Rodada 2</th>
+            <th>rodada 3</th>
+                
+            <tr>
+                <td id="jogo00"></td>
+                <td id="jogo10"></td>
+                <td id="jogo20"></td>
+            </tr>
+            <tr>
+                <td id="jogo01"></td>
+                <td id="jogo11"></td>
+                <td id="jogo21"></td>
+            </tr>
+            
+        </table>
+        <table hidden="hidden"  border="1" cellspacing="0" id="tbr2">
+            <th>Rodada 1</th>
+            <th>Rodada 2</th>
+            <th>rodada 3</th>
+                
+            <tr>
+                <td id="jogo00"></td>
+                <td id="jogo10"></td>
+                <td id="jogo20"></td>
+            </tr>
+            <tr>
+                <td id="jogo01"></td>
+                <td id="jogo11"></td>
+                <td id="jogo21"></td>
+            </tr>
+            
+        </table>
+        <table hidden="hidden" border="1" cellspacing="0" id="tbr3">
+            <th>Rodada 1</th>
+            <th>Rodada 2</th>
+            <th>rodada 3</th>
+                
+            <tr>
+                <td id="jogo00"></td>
+                <td id="jogo10"></td>
+                <td id="jogo20"></td>
+            </tr>
+            <tr>
+                <td id="jogo01"></td>
+                <td id="jogo11"></td>
+                <td id="jogo21"></td>
+            </tr>
+        </table>
+    </div>
+   
+    <div class="gruposB" >
+    <table hidden="hidden" border="1" id="tb4"cellspacing="0">
+        
+        <th id="group4"></th>
+        <td class="a">PTS</td>
+        <td class="a">SG</td>
+        <tr >
+            <td id="time0"></td>
+            <td id="pont0"></td>
+            <td id="sg0"></td>
+        </tr>
+        <tr >
+            <td id="time1"></td>
+            <td id="pont1"></td>
+            <td id="sg1"></td>
+        </tr>
+        <tr >
+            <td id="time2"></td>
+            <td id="pont2"></td>
+            <td id="sg2"></td>
+        </tr>
+        <tr >
+            <td id="time3"></td>
+            <td id="pont3"></td>
+            <td id="sg3"></td>
+        </tr>
+    </table>
+    <table hidden="hidden" border="1" id="tb5"cellspacing="0">
+        <th id="group5"></th>
+        <td class="a">PTS</td>
+        <td class="a">SG</td>
+        <tr >
+            <td id="time0"></td>
+            <td id="pont0"></td>
+            <td id="sg0"></td>
+        </tr>
+        <tr >
+            <td id="time1"></td>
+            <td id="pont1"></td>
+            <td id="sg1"></td>
+        </tr>
+        <tr >
+            <td id="time2"></td>
+            <td id="pont2"></td>
+            <td id="sg2"></td>
+        </tr>
+        <tr >
+            <td id="time3"></td>
+            <td id="pont3"></td>
+            <td id="sg3"></td>
+        </tr>
+    </table>
+    <table hidden="hidden" border="1" id="tb6"cellspacing="0">  
+        <th id="group6"></th> 
+        <td class="a">PTS</td>
+        <td class="a">SG</td>
+        <tr >
+            <td id="time0"></td>
+            <td id="pont0"></td>
+            <td id="sg0"></td>
+        </tr>
+        <tr >
+            <td id="time1"></td>
+            <td id="pont1"></td>
+            <td id="sg1"></td>
+        </tr>
+        <tr >
+            <td id="time2"></td>
+            <td id="pont2"></td>
+            <td id="sg2"></td>
+        </tr>
+        <tr >
+            <td id="time3"></td>
+            <td id="pont3"></td>
+            <td id="sg3"></td>
+        </tr>
+    </table>
+    <table hidden="hidden"border="1" id="tb7"cellspacing="0">   
+        <th id="group7"></th>
+        <td class="a">PTS</td>
+        <td class="a">SG</td>
+        <tr >
+            <td id="time0"></td>
+            <td id="pont0"></td>
+            <td id="sg0"></td>
+        </tr>
+        <tr >
+            <td id="time1"></td>
+            <td id="pont1"></td>
+            <td id="sg1"></td>
+        </tr>
+        <tr >
+            <td id="time2"></td>
+            <td id="pont2"></td>
+            <td id="sg2"></td>
+        </tr>
+        <tr >
+            <td id="time3"></td>
+            <td id="pont3"></td>
+            <td id="sg3"></td>
+        </tr>
+    </table>
+    </div>
+ <div class="resultadosB" style="width: 30%;"  >
+    <table hidden="hidden"  border="1" cellspacing="0" id="tbr4">
+        <th>Rodada 1</th>
+        <th>Rodada 2</th>
+        <th>rodada 3</th>
+        
+            <tr>
+                <td id="jogo00"></td>
+                <td id="jogo10"></td>
+                <td id="jogo20"></td>
+            </tr>
+            <tr>
+                <td id="jogo01"></td>
+                <td id="jogo11"></td>
+                <td id="jogo21"></td>
+            </tr>
+        
+    </table>
+        <table hidden="hidden"  border="1" cellspacing="0" id="tbr5">
+            <th>Rodada 1</th>
+            <th>Rodada 2</th>
+            <th>rodada 3</th>
+                
+            <tr>
+                <td id="jogo00"></td>
+                <td id="jogo10"></td>
+                <td id="jogo20"></td>
+            </tr>
+            <tr>
+                <td id="jogo01"></td>
+                <td id="jogo11"></td>
+                <td id="jogo21"></td>
+            </tr>
+            
+        </table>
+        <table hidden="hidden"   border="1" cellspacing="0" id="tbr6">
+            <th>Rodada 1</th>
+            <th>Rodada 2</th>
+            <th>rodada 3</th>
+                
+            <tr>
+                <td id="jogo00"></td>
+                <td id="jogo10"></td>
+                <td id="jogo20"></td>
+            </tr>
+            <tr>
+                <td id="jogo01"></td>
+                <td id="jogo11"></td>
+                <td id="jogo21"></td>
+            </tr>
+            
+        </table>
+        <table hidden="hidden"  border="1" cellspacing="0" id="tbr7">
+            <th>Rodada 1</th>
+            <th>Rodada 2</th>
+            <th>rodada 3</th>
+                
+            <tr>
+                <td id="jogo00"></td>
+                <td id="jogo10"></td>
+                <td id="jogo20"></td>
+            </tr>
+            <tr>
+                <td id="jogo01"></td>
+                <td id="jogo11"></td>
+                <td id="jogo21"></td>
+            </tr>
+        </table>
+
+    </div>
 </body>
 </html>

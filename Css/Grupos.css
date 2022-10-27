@@ -1,0 +1,72 @@
+ .gruposA {
+    border-collapse: collapse;
+    width: 10%;
+    margin-top: 10px;
+    float:left;
+    padding: auto;
+    margin-left: 10px;
+  } 
+  .gruposB {
+    border-collapse: collapse;
+    width: 10%;
+    margin-top: 10px;
+    float:right;
+    padding: auto;
+    margin-left: 10px;
+  } 
+  .resultadosA{
+    border-collapse: collapse;
+    width: 10%;
+    margin-top: 10px;
+    float:left;
+    padding: auto;
+    margin-left: 10px;
+  }
+  .resultadosB{
+    border-collapse: collapse;
+    width: 10%;
+    margin-top: 10px;
+    float:right;
+    padding: auto;
+    margin-left: 10px;
+  }
+  table {
+   
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+    overflow:hidden;
+    border-collapse:separate;
+    border: solid #ccc 1px;
+    -webkit-border-radius: 25px;
+       -moz-border-radius: 25px;
+            border-radius: 10px;
+    
+  }
+  th{
+    background-color:bisque ;
+  }
+  td{
+    font-size: small;
+  }
+ .a{
+    background-color:bisque ;
+  }
+  input{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: bisque; /* Green */
+    border: none;
+    color: Black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    -webkit-border-radius: 25px;
+       -moz-border-radius: 25px;
+            border-radius: 10px;
+  }
