@@ -30,7 +30,8 @@
   .principal {
     margin-top: 15px;
     line-height: 25px;
-    width: 148px;
+    /* width: 148px; */
+    width: 100/9%;
     text-align: center;
     overflow:hidden;
     border-collapse:separate;
