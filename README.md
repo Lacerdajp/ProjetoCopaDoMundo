@@ -2,7 +2,7 @@
 
 <p>projeto desenvolvido para programa de estagio GeoPost</p>
 <h2>Para os avaliadores:</h2>
-    A proposta do exercicio acabou  caindo na caixa de Promoções do meu e-mail, infelizmente  so consegui  ver faltando 3 dias para o prazo estimado. Sendo assim não consegui implementar um bom visual de CSS para ficar masi facil ao usuario, alem não implementar a aplicação com codigos mais limpos, pela urgencia a qual foi passada. 
+   A proposta do exercicio acabou caindo na caixa de Promoções do meu e-mail, infelizmente só consegui ver faltando 3 dias para o prazo estimado. Sendo assim não consegui implementar um bom visual de CSS para ficar mais fácil ao usuário, além não implementar a aplicação com códigos mais limpos, pela urgência a qual foi passada. 
 <h2>Dicas:</h2>
     Para uma experiencia melhor caso as tabelas estejam desalinhadas, afaste o zoom apertando Ctrl- até que o grupo E fique alinhado.
     (recomenda-se utilizar como minimo tamanho 1680px x 834px)
