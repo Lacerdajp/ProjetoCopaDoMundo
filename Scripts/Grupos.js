@@ -8,7 +8,6 @@ export class Grupos{
        
     }
     imprimirGrupo(){
-    document.querySelector('#tb'+this.id).querySelector('#group'+this.id).textContent="Grupo "+this.nome
         
         if( document.getElementById("tb"+this.id).getAttribute("hidden")){
         document.getElementById("tb"+this.id).removeAttribute("hidden")
@@ -40,6 +39,7 @@ export class Grupos{
             this.rodadas[j].flatMap(
                 (item,x)=>{
                     if(x===i){
+                        let name
                     return item.nome
                     }
                 }) 

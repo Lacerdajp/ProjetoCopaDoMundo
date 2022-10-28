@@ -1,7 +1,8 @@
 import{Selecao} from './Selecao.js'
 import {Grupos} from './Grupos.js'
 import{Jogo} from './Jogo.js'
-import{participantes,gerarGrupos,proximaFase,acordeao}from'./functions.js'
+import { JogoEliminatorias } from './JogoEliminatorias.js'
+import{participantes,gerarGrupos,proximaFase,acordeao, imprimirFase}from'./functions.js'
 let selecoes=await participantes().then(p=>{return p});
 let grupos=[]
 let eliminatorias=[[],[],[],[]]
@@ -12,6 +13,7 @@ acordeao(acc)
 document.querySelector('#btn').addEventListener('click',async () =>{
     switch (clicks) {
         case 0:
+           
             grupos=await gerarGrupos(selecoes)
             grupos.forEach(element => {
                 element.imprimirGrupo()
@@ -45,16 +47,58 @@ document.querySelector('#btn').addEventListener('click',async () =>{
 
             });
             eliminatorias[0]= proximaFase(grupos)
+            eliminatorias.forEach(element => {
+                if (element!=[]) {
+                    imprimirFase(element)
+                    
+                }
+            });
             clicks++
             break;
         case 4:
-             
+            
+            eliminatorias[1]=proximaFase(null,eliminatorias[0])
+            eliminatorias.forEach(element => {
+                if (element!=[]) {
+                    imprimirFase(element)
+                }
+            });
+            clicks++
             break;
+        case 5:
+            eliminatorias[2]=proximaFase(null,eliminatorias[1])
+            eliminatorias.forEach(element => {
+                if (element!=[]) {
+                    imprimirFase(element)
+                }
+            });
+            clicks++
+            break;
+        case 6:
+            eliminatorias[3]=proximaFase(null,eliminatorias[2])
+            eliminatorias.forEach(element => {
+                if (element!=[]) {
+                    imprimirFase(element)
+                }
+            });
+            clicks++
+            break;
+        case 7:
+            eliminatorias[3].forEach(element => {
+                element.simularResultado()
+            });
+            eliminatorias.forEach(element => {
+                if (element!=[]) {
+                    imprimirFase(element)
+                }
+            });
+            clicks++
+            break
         default:
             break;
     }
     })
-    
+    document.querySelector('#refresh').addEventListener('click', async()=>{  window.location.reload()})
 
 
 

@@ -70,13 +70,18 @@ export  function proximaFase(grupos=null,jogosRecebidos=null){
         
     }
     }
-    times=times.flat(1)
+    
     }
     else if(Array.isArray(jogosRecebidos)){
-       times.push()
+        jogosRecebidos.forEach(element => {
+            let time=element.simularResultado()
+            times.push([time])
+       });
+       
     }
-    
-    for (let i = 0; i < 8 ;i++) {
+    times=times.flat(1)
+    let tam=times.length/2
+    for (let i = 0; i <  tam;i++) {
         let time1=times.pop()
         let time2=times.pop()
         jogos.push(new JogoEliminatorias(time1.nome.toUpperCase()+" x "+time2.nome.toUpperCase(),time1,time2)) 
@@ -98,6 +103,23 @@ export function acordeao(acc){
       });
     }
 }
-export function imprimirFase(tamanhoArray){
-    
+export function imprimirFase(jogos){
+    let nPart=jogos.length
+    for (let i = 0; i < nPart; i++) {
+        
+           document.querySelector('#tabela'+nPart+i).
+           querySelector('#time1').textContent=jogos[i].time1.nome
+           document.querySelector('#tabela'+nPart+i).
+           querySelector('#time2').textContent=jogos[i].time2.nome
+           document.querySelector('#tabela'+nPart+i).
+           querySelector('#gols1').textContent=jogos[i].golsTime1
+           document.querySelector('#tabela'+nPart+i).
+           querySelector('#gols2').textContent=jogos[i].golsTime2
+           document.querySelector('#tabela'+nPart+i).
+           querySelector('#penalti1').textContent=jogos[i].penalti1
+           document.querySelector('#tabela'+nPart+i).
+           querySelector('#penalti2').textContent=jogos[i].penalti2
+        
+        
+    }
 }

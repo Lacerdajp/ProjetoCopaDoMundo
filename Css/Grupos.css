@@ -1,27 +1,36 @@
- .gruposA {
-  float: left;
-    border-collapse: collapse;
-    border: #000;
-    width: 10%;
-    margin-top: 10px;
-    float:left;
-    padding: auto;
-    margin-left: 10px;
-  } 
-  .gruposB {
-    float: right;
-    border-collapse: collapse;
-    border: #000;
-    width: 10%;
-    margin-top: 10px;
-    float:right;
-    padding: auto;
-    margin-right: 10px;
-  } 
-  table {
-
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+.row {
+  content: "";
+  display: table;
+  clear: both;
+}
+.column {
+  float: left; 
+  margin-left: 20px;
+  width: 100/9%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+  .rodadas{
     margin-top: 15px;
     width: 100%;
+    text-align: center;
+    overflow:hidden;
+    border-collapse:separate;
+    border: solid black 1px;
+    -webkit-border-radius: 25px;
+       -moz-border-radius: 25px;
+            border-radius: 10px;
+  }
+  .principal {
+    margin-top: 15px;
+    line-height: 25px;
+    width: 148px;
     text-align: center;
     overflow:hidden;
     border-collapse:separate;
@@ -129,7 +138,7 @@
     background: #00d9ff;
   }
   .accordion {
-    background-color: #eee;
+    background-color: bisque;
     color: #444;
     cursor: pointer;
     padding: 18px;
