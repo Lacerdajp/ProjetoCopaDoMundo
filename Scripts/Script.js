@@ -1,10 +1,14 @@
 import{Selecao} from './Selecao.js'
 import {Grupos} from './Grupos.js'
 import{Jogo} from './Jogo.js'
-import{participantes,gerarGrupos}from'./functions.js'
+import{participantes,gerarGrupos,proximaFase,acordeao}from'./functions.js'
 let selecoes=await participantes().then(p=>{return p});
 let grupos=[]
+let eliminatorias=[[],[],[],[]]
 let clicks=0
+let acc = document.getElementsByClassName("accordion")
+acordeao(acc)
+
 document.querySelector('#btn').addEventListener('click',async () =>{
     switch (clicks) {
         case 0:
@@ -23,7 +27,6 @@ document.querySelector('#btn').addEventListener('click',async () =>{
                 element.imprimirRodadas(0)
                 element.imprimirGrupo()
             });
-            console.log(grupos)
             clicks++;
             break;
         case 2:
@@ -32,7 +35,6 @@ document.querySelector('#btn').addEventListener('click',async () =>{
                 element.imprimirRodadas(1)
                 element.imprimirGrupo()
             });
-            console.log(grupos)
             clicks++
             break;
         case 3:
@@ -40,15 +42,19 @@ document.querySelector('#btn').addEventListener('click',async () =>{
                 element.jogandoRodada(2);
                 element.imprimirRodadas(2)
                 element.imprimirGrupo()
+
             });
-            console.log(grupos)
+            eliminatorias[0]= proximaFase(grupos)
             clicks++
+            break;
+        case 4:
+             
             break;
         default:
             break;
     }
-    console.log (clicks)
     })
+    
 
 
 

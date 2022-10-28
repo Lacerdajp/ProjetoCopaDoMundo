@@ -26,16 +26,17 @@ export class Grupos{
         }
     }
     imprimirRodadas(rodada=null){
-        if( document.getElementById("tbr"+this.id).getAttribute("hidden")){
-        document.getElementById("tbr"+this.id).removeAttribute("hidden")
+        
+        for (let j = 0; j < 3; j++) 
+        {
+        if( document.getElementById("TabelaResultado"+j).getAttribute("hidden")){
+        document.getElementById("TabelaResultado"+j).removeAttribute("hidden")
         }
-        for (let j = 0; j < 3; j++) {
            for (let i = 0; i < 2; i++) {
-            if (rodada<=j) {
-                
            
-            document.querySelector('#tbr'+this.id).
-            querySelector('#jogo'+j+i).textContent= 
+            if (rodada<=j) {
+           document.querySelector('#TabelaResultado'+j).
+           querySelector('#jogo'+this.id+j+i).textContent= 
             this.rodadas[j].flatMap(
                 (item,x)=>{
                     if(x===i){
@@ -44,8 +45,8 @@ export class Grupos{
                 }) 
             }
             if (rodada!=null) {
-                document.querySelector('#tbr'+this.id).
-                querySelector('#jogo'+rodada+i).textContent= 
+                document.querySelector('#TabelaResultado'+rodada).
+                querySelector('#jogo'+this.id+rodada+i).textContent= 
                 this.rodadas[rodada].flatMap(
                 (item,x) =>{
                     if(x===i){
