@@ -3,6 +3,24 @@ import {Grupos} from './Grupos.js'
 import{Jogo} from './Jogo.js'
 import { JogoEliminatorias } from './JogoEliminatorias.js';
 //Buscando seleções participantes
+export async function enviandoResult(final){
+    console.log(JSON.stringify(final))
+    const post="https://estagio.geopostenergy.com/WorldCup/InsertFinalResult"
+    fetch(post,{
+        method: 'POST',
+        headers: new Headers({
+            'Content-Type': 'application/json',
+            'git-user': 'Lacerdajp'
+        }),
+        body:JSON.stringify(final)
+    }).then((response) => response.json())
+    .then((final) => {
+      console.log("Success:", final);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
 export async function participantes() {
     const get='https://estagio.geopostenergy.com/WorldCup/GetAllTeams';
     let  selecoes=[];

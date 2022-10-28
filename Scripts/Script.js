@@ -2,9 +2,11 @@ import{Selecao} from './Selecao.js'
 import {Grupos} from './Grupos.js'
 import{Jogo} from './Jogo.js'
 import { JogoEliminatorias } from './JogoEliminatorias.js'
-import{participantes,gerarGrupos,proximaFase,acordeao, imprimirFase}from'./functions.js'
+import{participantes,gerarGrupos,proximaFase,acordeao, imprimirFase, enviandoResult}from'./functions.js'
 let selecoes=await participantes().then(p=>{return p});
 let grupos=[]
+let final;
+let resposta
 let eliminatorias=[[],[],[],[]]
 let clicks=0
 let acc = document.getElementsByClassName("accordion")
@@ -86,12 +88,23 @@ document.querySelector('#btn').addEventListener('click',async () =>{
         case 7:
             eliminatorias[3].forEach(element => {
                 element.simularResultado()
+                final={
+                    "equipeA":element.time1.token,
+                    "equipeB":element.time2.token,
+                    "golsEquipeA":element.golsTime1,
+                    "golsEquipeB":element.golsTime2,
+                    "golsPenaltyTimeA":element.penalti1,
+                    "golsPenaltyTimeB":element.penalti2
+
+                }
             });
             eliminatorias.forEach(element => {
                 if (element!=[]) {
                     imprimirFase(element)
                 }
             });
+            
+            resposta= await enviandoResult(final)
             clicks++
             break
         default:
