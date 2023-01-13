@@ -1,6 +1,8 @@
 # ProjetoCopaDoMundo
 
 <p>projeto desenvolvido para programa de estagio GeoPost</p>
+<h2>Observações:</h2>
+   O projeto esta desatualizado, a API e o banco utilizado pela empresa está inativo, aguarde pela atualização logo disponiblizarei uma API e um Script de banco no Github e irei instruir para o devido funcionamento...
 <h2>Para os avaliadores:</h2>
    A proposta do exercicio acabou caindo na caixa de Promoções do meu e-mail, infelizmente só consegui ver faltando 3 dias para o prazo estimado. Sendo assim não consegui implementar um bom visual de CSS para ficar mais fácil ao usuário, além não implementar a aplicação com códigos mais limpos, pela urgência a qual foi passada. 
 <h2>Dicas:</h2>
