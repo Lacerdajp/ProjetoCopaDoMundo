@@ -93,8 +93,8 @@ document.querySelector('#btn').addEventListener('click',async () =>{
                     "equipeB":element.time2.token,
                     "golsEquipeA":element.golsTime1,
                     "golsEquipeB":element.golsTime2,
-                    "golsPenaltyTimeA":element.penalti1,
-                    "golsPenaltyTimeB":element.penalti2
+                    "golsPenaltyEquipeA":element.penalti1,
+                    "golsPenaltyEquipeB":element.penalti2
 
                 }
             });

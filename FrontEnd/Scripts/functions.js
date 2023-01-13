@@ -5,7 +5,7 @@ import { JogoEliminatorias } from './JogoEliminatorias.js';
 //Buscando seleções participantes
 export async function enviandoResult(final){
     console.log(JSON.stringify(final))
-    const post="https://estagio.geopostenergy.com/WorldCup/InsertFinalResult"
+    const post="https://localhost:7159/api/Finals"
     fetch(post,{
         method: 'POST',
         headers: new Headers({
@@ -22,21 +22,25 @@ export async function enviandoResult(final){
     });
 }
 export async function participantes() {
-    const get='https://estagio.geopostenergy.com/WorldCup/GetAllTeams';
+    const get='https://localhost:7159/api/Selecaos';
     let  selecoes=[];
-    await fetch(get,{
+    await fetch(get,
+        {
             
         method: 'GET',
         headers: new Headers({
             'git-user': 'Lacerdajp'
         })
-    })
-    .then(response=>response.json())
+    }
+    )
+    .then(response=>
+        response.json()
+        )
     .then(dados=>{
-        dados.Result.forEach(element => {
-            let selecao=new Selecao(dados.Result.indexOf(element),element.Token,element.Name);
-            selecoes.push(selecao);
+        dados.forEach(element => {
             
+            let selecao=new Selecao(dados.indexOf(element),element.token,element.nome);
+            selecoes.push(selecao);
         });
     }
     )
