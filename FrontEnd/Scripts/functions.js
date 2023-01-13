@@ -5,12 +5,12 @@ import { JogoEliminatorias } from './JogoEliminatorias.js';
 //Buscando seleções participantes
 export async function enviandoResult(final){
     console.log(JSON.stringify(final))
-    const post="https://localhost:7159/api/Finals"
+    const post="https://localhost:"+getenv(YOUR_SERVER)+"/api/Finals"
     fetch(post,{
         method: 'POST',
         headers: new Headers({
             'Content-Type': 'application/json',
-            'git-user': 'Lacerdajp'
+            'git-user': getenv(YOUR_USER_GITHUB)
         }),
         body:JSON.stringify(final)
     }).then((response) => response.json())
@@ -22,14 +22,14 @@ export async function enviandoResult(final){
     });
 }
 export async function participantes() {
-    const get='https://localhost:7159/api/Selecaos';
+    const get='https://localhost:'+getenv(YOUR_SERVER)+'/api/Selecaos';
     let  selecoes=[];
     await fetch(get,
         {
             
         method: 'GET',
         headers: new Headers({
-            'git-user': 'Lacerdajp'
+            'git-user': getenv(YOUR_USER_GITHUB)
         })
     }
     )
