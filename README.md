@@ -1,5 +1,7 @@
 # ProjetoCopaDoMundo
-
+<p>
+<img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
+</p>
 <p>projeto desenvolvido para programa de estagio GeoPost</p>
 <h2>Observações:</h2>
    O Projeto foi atualizado e agora foi criado uma API e alguns Scripts de Banco de Dados, pois a API e o Banco da empresa foram Desativados
