@@ -33,7 +33,7 @@ Para a execução do BackEnd deve-se baixar o [Visual Studio](https://visualstud
    ~~~Json
    {
   "ConnectionString": {
-    "SQLConnection": "Data Source=DESKTOP-K3PE66O;Initial Catalog=COPA;User ID=sa;Password=Hdjp2000;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;"
+    "SQLConnection": "Data Source=localhost;Initial Catalog=COPA;User ID=sa;Password=yourPassword;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;"
 
   },
   ~~~
