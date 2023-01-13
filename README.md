@@ -2,7 +2,7 @@
 
 <p>projeto desenvolvido para programa de estagio GeoPost</p>
 <h2>Observações:</h2>
-   O projeto esta desatualizado, a API e o banco utilizado pela empresa está inativo, aguarde pela atualização logo disponiblizarei uma API e um Script de banco no Github e irei instruir para o devido funcionamento...
+   O Projeto foi atualizado e agora foi criado uma API e alguns Scripts de Banco de Dados, pois a API e o Banco da empresa foram Desativados
 <h2>Para os avaliadores:</h2>
    A proposta do exercicio acabou caindo na caixa de Promoções do meu e-mail, infelizmente só consegui ver faltando 3 dias para o prazo estimado. Sendo assim não consegui implementar um bom visual de CSS para ficar mais fácil ao usuário, além não implementar a aplicação com códigos mais limpos, pela urgência a qual foi passada. 
 <h2>Dicas:</h2>
@@ -10,6 +10,8 @@
     (recomenda-se utilizar como minimo tamanho 1680px x 834px)
 <h2>Tecnologias:</h2>
     JS,HTML e CSS
+    .Net Entity Fremwork
+    SQL SERVER
 <h2>Objetivo:</h2>
     Simular uma copa do mundo.
 <h2>Funcionalidade:</h2>
@@ -37,6 +39,11 @@
     <p> -A funcionalidade é bem simples basta clicar em proxima etapa que vai avançando as etapas. </p>
     <p> -Caso queira conferir os resultadaos das rodadas da fase de grupos basta clicar no simbolo d elista ao lado do botão de proxima etapa.</p>
     <p> -Caso queira reiniciar a simulação basta  clicar no botão de refresh ao lado dos demais botões</p>
+
+<h2>Processo de instalação:</h2>
+<p>Para a criação de um Banco de Dados SQL SERVER é disponibilizado Scripts em ordem  Númerica na pasta Banco de Dados,  basta executar no Software SQLServer MAgement Studio, cada um em ordem.</p>
+<p>Para a execução do BackEnd basta alterar para a sua senha de Banco de Dados no arquivo AppSettings.json na parte de SQLConnection.Após isso basta rodar o Projeto em BackEnd.</p>
+<p>Para a Execução do FrontEnd Basta alterar no arquivo Function.js na pasta Scripts, Trocar o "getEnv()" pelo que é solicitado como Usuario do gitHGub ou Porta do Servidor</p>
 
 
 
