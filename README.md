@@ -2,21 +2,77 @@
 <p>
 <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 </p>
-<p>projeto desenvolvido para programa de estagio GeoPost</p>
-<h2>Observações:</h2>
-   O Projeto foi atualizado e agora foi criado uma API e alguns Scripts de Banco de Dados, pois a API e o Banco da empresa foram Desativados
-<h2>Para os avaliadores:</h2>
-   A proposta do exercicio acabou caindo na caixa de Promoções do meu e-mail, infelizmente só consegui ver faltando 3 dias para o prazo estimado. Sendo assim não consegui implementar um bom visual de CSS para ficar mais fácil ao usuário, além não implementar a aplicação com códigos mais limpos, pela urgência a qual foi passada. 
-<h2>Dicas:</h2>
-    Para uma experiencia melhor caso as tabelas estejam desalinhadas, afaste o zoom apertando Ctrl- até que o grupo E fique alinhado.
-    (recomenda-se utilizar como minimo tamanho 1680px x 834px)
-<h2>Tecnologias:</h2>
-    JS,HTML e CSS
-    .Net Entity Fremwork
-    SQL SERVER
-<h2>Objetivo:</h2>
-    Simular uma copa do mundo.
-<h2>Funcionalidade:</h2>
+
+O principio era desenvolver uma copa do mundo para a vaga de estágio GeoPost, depois foi melhorado o projeto afim de se tornar um portifolio
+
+## Objetivo:
+
+  Simular uma copa do mundo, com resultados randomicos.
+
+## Para os avaliadores:
+
+   A proposta do exercicio acabou caindo na caixa de Promoções do meu e-mail, infelizmente só consegui ver faltando 3 dias para o prazo estimado. Sendo assim não consegui implementar um bom visual de CSS para ficar mais fácil ao usuário, além não implementar a aplicação com códigos mais limpos, pela urgência a qual foi passada.
+   
+## Observações:
+
+   O Projeto foi atualizado e agora foi criado uma API e alguns Scripts de Banco de Dados, pois a API e o Banco da empresa foram Desativados.
+
+## Tecnologias:
+
+   - [``JS``](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+   - [``CSS``](https://developer.mozilla.org/en-US/docs/Web/CSS)
+   - [``HTML``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html)
+   - [``.Net Entity Fremwork``](https://learn.microsoft.com/en-us/ef/core/get-started/overview/first-app?tabs=netcore-cli)
+   - [``SQL SERVER``](https://learn.microsoft.com/pt-br/sql/sql-server/?view=sql-server-2017)
+   
+## Processo de instalação:
+
+Para a criação de um Banco de Dados [SQL SERVER](https://learn.microsoft.com/pt-br/sql/sql-server/?view=sql-server-2017) é [disponibilizado Scripts em ordem  Númerica na pasta](https://github.com/Lacerdajp/ProjetoCopaDoMundo/tree/main/DataBase), basta executar no Software [SQLServer MAgement Studio](https://learn.microsoft.com/pt-br/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16), cada um em ordem.
+
+Para a execução do BackEnd deve-se baixar o [Visual Studio](https://visualstudio.microsoft.com/pt-br/downloads/), após isso  [abra o arquivo ".sln"](https://github.com/Lacerdajp/ProjetoCopaDoMundo/tree/main/BackEnd/APIProjetoCopaDoMundo).Depois basta [alterar para a sua senha de Banco de Dados no arquivo "AppSettings.json" na parte de SQLConnection](https://github.com/Lacerdajp/ProjetoCopaDoMundo/tree/main/BackEnd/APIProjetoCopaDoMundo/APIProjetoCopaDoMundo):
+   ~~~Json
+   {
+  "ConnectionString": {
+    "SQLConnection": "Data Source=DESKTOP-K3PE66O;Initial Catalog=COPA;User ID=sa;Password=Hdjp2000;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;"
+
+  },
+  ~~~
+Após isso basta rodar o Projeto em BackEnd.
+
+Para a Execução do FrontEnd,utilizando o [VsCode](https://code.visualstudio.com/docs) Basta [alterar no arquivo Function.js na pasta Scripts](https://github.com/Lacerdajp/ProjetoCopaDoMundo/tree/main/FrontEnd/Scripts), Trocar o "getEnv()" pelo que é solicitado:
+~~~javascript
+export async function enviandoResult(final){
+    console.log(JSON.stringify(final))
+    const post="https://localhost:"+"yourPort"+"/api/Finals"
+    fetch(post,{
+        method: 'POST',
+        headers: new Headers({
+            'Content-Type': 'application/json',
+            'git-user': "yourUser"
+        }),
+~~~
+~~~javascript
+export async function participantes() {
+    const get='https://localhost:'+"yourPort"+'/api/Selecaos';
+    let  selecoes=[];
+    await fetch(get,
+        {
+            
+        method: 'GET',
+        headers: new Headers({
+            'git-user': "youUser"
+        })
+    }
+~~~
+
+
+
+## Dicas:
+   Para uma experiencia melhor caso as tabelas estejam desalinhadas, afaste o zoom apertando `Ctrl-` até que o grupo E fique alinhado.
+    (recomenda-se utilizar como minimo tamanho `1680px x 834px`)
+
+## O que o programa Faz: 
+
   <p>  1- Obtém todas as Seleções que estão disputando a Competição,através de uma API</p>
    <p> 2-Separa de forma randômica em 8 grupos (do grupo A ao H) de 4 seleções cada um .</p>
    <p> 3-Cada grupo tem três rodadas de partidas. Em cada rodada dois jogos são realizados, fazendo com
@@ -37,15 +93,19 @@
          <p>- Final - 2 equipes — 1 partida </p>
     <p>8-Em caso de empate, é simulado os penaltis de acordo com a regra do futebol. </p>
     <p>9-Verifica quanto foi o jogo de cada rodada </p>
-<h2> Como funciona:</h2>
-    <p> -A funcionalidade é bem simples basta clicar em proxima etapa que vai avançando as etapas. </p>
-    <p> -Caso queira conferir os resultadaos das rodadas da fase de grupos basta clicar no simbolo d elista ao lado do botão de proxima etapa.</p>
-    <p> -Caso queira reiniciar a simulação basta  clicar no botão de refresh ao lado dos demais botões</p>
+    
+## Funcionalidade:
 
-<h2>Processo de instalação:</h2>
-<p>Para a criação de um Banco de Dados SQL SERVER é disponibilizado Scripts em ordem  Númerica na pasta Banco de Dados,  basta executar no Software SQLServer MAgement Studio, cada um em ordem.</p>
-<p>Para a execução do BackEnd basta alterar para a sua senha de Banco de Dados no arquivo AppSettings.json na parte de SQLConnection.Após isso basta rodar o Projeto em BackEnd.</p>
-<p>Para a Execução do FrontEnd Basta alterar no arquivo Function.js na pasta Scripts, Trocar o "getEnv()" pelo que é solicitado como Usuario do gitHGub ou Porta do Servidor</p>
+   -A funcionalidade é bem simples basta clicar em `"proxima etapa"` que vai avançando as etapas. 
+   
+   -Caso queira conferir os resultadaos das rodadas da fase de grupos basta clicar no simbolo  ao lado do botão de `"proxima etapa"`:
+   <p>
+   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5JjWtRloJW8YeQWPtKfeC74q1yeOcYxOTPQ&usqp=CAU"/>
+   </p>
+  
+   
+   -Caso queira reiniciar a simulação basta  clicar no botão de `refresh` ao lado dos demais botões
+
 
 
 
